@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import useReveal from './useReveal.js'
 import { site, nav, features, services, gallery, prices, reviews, options, images } from './data.js'
 
 const wa = (m) => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(m)}`
@@ -69,6 +70,7 @@ function Contact() {
 }
 
 export default function App() {
+  useReveal('.info .wrap > div, #about > *, .feat > div, .svc > *, .cards article, .gal > div:first-child, .gr img, .pr > *, .rh > *, .revs blockquote, .promo, .form, .mapcard, .fw > *')
   const open = new Date().getDay() !== 0
   return (
     <div id="home">
